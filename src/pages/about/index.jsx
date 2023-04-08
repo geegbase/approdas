@@ -6,7 +6,11 @@ export default function About() {
       <Head>
         <title>About Page</title>
       </Head>
-      About
+      <main className="h-full">
+        <section>
+          <div className="max-w-[1200px] my-0 mx-auto py-0 px-[5px]">About</div>
+        </section>
+      </main>
     </>
   );
 }
