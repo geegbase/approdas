@@ -23,7 +23,7 @@ export default function Home() {
                   Contact Us
                 </a>
               </div>
-              <div className="w-full">
+              <div className="w-full mt-5 lg:mt-0 lg:[&>div]:justify-center [&>div]:flex [&>div]:flex-col md:[&>div]:flex-row lg:[&>div]:flex-row [&>div>div]:!w-auto">
                 <div className={styles.illustrationEditor}>
                   <div className={`${styles.code} ${styles.codeHtml}`}>
                     <header>
@@ -154,9 +154,9 @@ export default function Home() {
                       <code>
                         <span className={styles.cy}>var</span>{' '}
                         <span className={styles.cb}>colors</span> = [
-                        <span className={styles.cg}>“#74B087”</span>,{' '}
-                        <span className={styles.cg}>“#DE7300”</span>,{' '}
-                        <span className={styles.cg}>“#74B087”</span>];
+                        <span className={styles.cg}>"#74B087"</span>,{' '}
+                        <span className={styles.cg}>"#DE7300"</span>,{' '}
+                        <span className={styles.cg}>"#74B087"</span>];
                         <br />
                         <br />
                         <span className={styles.cc}>// Do the thing</span>

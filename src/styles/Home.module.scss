@@ -32,14 +32,15 @@
         margin: 0;
       }
     }
-    /*&Html {
-      
-    }*/
-    /*&Css {
-      
-    }*/
-    /* &Js {
-    }*/
+    &Html {
+      width: auto;
+    }
+    &Css {
+      width: 300px;
+    }
+    &Js {
+      width: 300px;
+    }
     .codeContent {
       margin: 0 10px 10px;
       color: white;
