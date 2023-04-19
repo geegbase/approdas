@@ -23,6 +23,14 @@ export default function Header() {
                 About
               </Link>
             </li>
+            <li>
+              <Link
+                href="/marketplace"
+                className="hover:text-slate-100 hover:bg-[#7c00ff] px-4 py-2 hover:rounded-lg"
+              >
+                Marketplace
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
