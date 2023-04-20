@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
+import Tab from '@/components/Tab';
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       </Head>
       <main>
         <section>
-          <div className="max-w-[1200px] my-0 mx-auto px-[5px] py-0">
+          <div className="max-w-[1200px] my-0 mx-auto px-[5px] py-0 mt-20">
             <div className="flex lg:flex-row flex-col py-2">
               <div className="w-full">
                 <p className="font-exo2 text-[3rem]">
@@ -169,6 +170,16 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="max-w-[1200px] my-0 mx-auto px-[5px] py-0 mt-20 font-exo2">
+            <div className="font-exo2">
+              <p className="text-3xl">What we do</p>
+            </div>
+            <div className="mt-[2rem]">
+              <Tab />
             </div>
           </div>
         </section>
