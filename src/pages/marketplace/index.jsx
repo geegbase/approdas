@@ -1,6 +1,7 @@
 import Head from 'next/head';
+import Slider from '@/components/Slider';
 
-export default function About() {
+export default function Marketplace() {
   return (
     <>
       <Head>
@@ -16,6 +17,7 @@ export default function About() {
                 need or like
               </p>
             </div>
+            <Slider />
           </div>
         </section>
       </main>
