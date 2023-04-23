@@ -59,7 +59,7 @@ export default function Home() {
                         <span className={styles.cr}>&lt;div</span>{' '}
                         <span className={styles.cy}>className</span>
                         <span className={styles.cw}>=</span>
-                        <span className={styles.cg}>"rect"</span>
+                        <span className={styles.cg}>&quot;rect&quot;</span>
                         <span className={styles.cr}>&gt;&lt;/div&gt;</span>
                       </code>
                     </div>
@@ -96,7 +96,7 @@ export default function Home() {
                       <code>
                         <p className={styles.line1}>
                           <span className={styles.cy}>.rect</span>
-                          <span>{` {`}</span>
+                          <span>{' {'}</span>
                         </p>
                         <br />
                         <p className={styles.line2}>
@@ -118,7 +118,7 @@ export default function Home() {
                         <br />
                         <p className={styles.line5}>
                           <span className={styles.cy}>$dark-gray</span>{' '}
-                          <span className={styles.co}>100%</span>);{`}`}
+                          <span className={styles.co}>100%</span>);{'}'}
                         </p>
                       </code>
                     </div>
@@ -155,12 +155,12 @@ export default function Home() {
                       <code>
                         <span className={styles.cy}>var</span>{' '}
                         <span className={styles.cb}>colors</span> = [
-                        <span className={styles.cg}>"#74B087"</span>,{' '}
-                        <span className={styles.cg}>"#DE7300"</span>,{' '}
-                        <span className={styles.cg}>"#74B087"</span>];
+                        <span className={styles.cg}>&quot;#74B087&quot;</span>,{' '}
+                        <span className={styles.cg}>&quot;#DE7300&quot;</span>,{' '}
+                        <span className={styles.cg}>&quot;#74B087&quot;</span>];
                         <br />
                         <br />
-                        <span className={styles.cc}>// Do the thing</span>
+                        <span className={styles.cc}>{'// Do the thing'}</span>
                         <br />
                         <span className={styles.cy}>function</span>{' '}
                         <span className={styles.cb}>animate</span>

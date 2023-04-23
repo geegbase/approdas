@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import SliderArrowIcon from '../Icons/SliderArrowIcon';
 import { SLIDER_THRESHOLD } from '@/utils/constants';
 import styles from '@/styles/Slider.module.scss';
@@ -63,7 +64,7 @@ const Slider = ({ product }) => {
             onPointerDown={handlePointerDown}
             onPointerUp={handlePointerUp}
           >
-            <img src={slide} alt="" />
+            <Image src={slide} fill alt="" />
           </div>
         );
       })}

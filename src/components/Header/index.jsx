@@ -94,12 +94,12 @@ export default function Header() {
         </nav>
         {isActive ? (
           <CloseIcon
-            className={`md:hidden lg:hidden cursor-pointer z-10 fill-white`}
+            className={'md:hidden lg:hidden cursor-pointer z-10 fill-white'}
             onClick={handleCloseMenu}
           />
         ) : (
           <HamburgerIcon
-            className={`md:hidden lg:hidden cursor-pointer z-10 fill-white`}
+            className={'md:hidden lg:hidden cursor-pointer z-10 fill-white'}
             onClick={handleOpenMenu}
           />
         )}

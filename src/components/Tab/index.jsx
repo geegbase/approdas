@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import WebDevelopmentIcon from '@/components/Icons/WebDevelopmentIcon';
 import TickIcon from '@/components/Icons/TickIcon';
@@ -104,7 +103,7 @@ const Tab = () => {
       <div className="flex-auto relative overflow-x-hidden">
         <div
           style={{
-            width: `300%`,
+            width: '300%',
             transform: `translateX(-${(
               (index.current / options.length) *
               100
