@@ -1,29 +1,42 @@
-import { useState } from 'react';
-import styles from '@/styles/Slider.module.scss';
+import { useRef, useState } from 'react';
 import SliderArrowIcon from '../Icons/SliderArrowIcon';
+import { SLIDER_THRESHOLD } from '@/utils/constants';
+import styles from '@/styles/Slider.module.scss';
 
-const slides = [
-  'https://picsum.photos/1200/1200/?image=299',
-  'https://picsum.photos/1200/1200/?image=398',
-  'https://picsum.photos/1200/1200/?image=377',
-  'https://picsum.photos/1200/1200/?image=196',
-  'https://picsum.photos/1200/1200/?image=296',
-  'https://picsum.photos/1200/1200/?image=274',
-];
-
-const Slider = () => {
+const Slider = ({ product }) => {
   const [index, setIndex] = useState(0);
+  const startX = useRef(0);
 
   const handleLeft = () => {
-    setIndex((prev) => (index > 0 ? --prev : slides.length - 1));
+    setIndex((prev) => (index > 0 ? --prev : product.photos.length - 1));
   };
 
   const handleRight = () => {
-    setIndex((prev) => (index < slides.length - 1 ? ++prev : 0));
+    setIndex((prev) => (index < product.photos.length - 1 ? ++prev : 0));
   };
 
   const handleStatusClick = (idx) => {
     setIndex(idx);
+  };
+
+  const handlePointerDown = (e) => {
+    startX.current = e.pageX;
+  };
+  const handlePointerUp = (e) => {
+    const diff = Math.abs(e.pageX - startX.current);
+    if (diff >= SLIDER_THRESHOLD) {
+      const delta = e.pageX - startX.current;
+      setIndex((prevState) => {
+        if (delta < 0) {
+          return prevState < product.photos.length - 1 ? prevState + 1 : 0;
+        } else {
+          return prevState > 0 ? prevState - 1 : product.photos.length - 1;
+        }
+      });
+    }
+  };
+  const handlePointerMove = (e) => {
+    e.preventDefault();
   };
   return (
     <div className={styles.slider}>
@@ -31,7 +44,7 @@ const Slider = () => {
       <SliderArrowIcon onClick={handleRight} />
 
       <div className={styles.status}>
-        {slides.map((_, idx) => {
+        {product.photos.map((_, idx) => {
           return (
             <div
               className={`${styles.stat} ${index === idx ? styles.active : ''}`}
@@ -41,11 +54,14 @@ const Slider = () => {
           );
         })}
       </div>
-      {slides.map((slide, idx) => {
+      {product.photos.map((slide, idx) => {
         return (
           <div
             className={`${styles.image} ${index === idx ? styles.active : ''}`}
             key={idx}
+            onPointerMove={handlePointerMove}
+            onPointerDown={handlePointerDown}
+            onPointerUp={handlePointerUp}
           >
             <img src={slide} alt="" />
           </div>

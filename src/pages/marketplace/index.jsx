@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Slider from '@/components/Slider';
+import { products } from '@/utils/mock';
 
 export default function Marketplace() {
   return (
@@ -17,7 +18,11 @@ export default function Marketplace() {
                 need or like
               </p>
             </div>
-            <Slider />
+            <div className="flex flex-row flex-wrap gap-[10px] [&>div]:basis-[calc(calc(100%/1)-calc(10px/1*0))] md:[&>div]:basis-[calc(calc(100%/2)-calc(10px/2*1))] lg:[&>div]:basis-[calc(calc(100%/3)-calc(10px/3*2))]">
+              {products.map((product, index) => {
+                return <Slider product={product} key={index} />;
+              })}
+            </div>
           </div>
         </section>
       </main>
